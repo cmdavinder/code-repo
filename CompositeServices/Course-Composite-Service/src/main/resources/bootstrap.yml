@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: course-composite-service
+info:
+  component:  ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
 ---
 spring:
   profiles: dev
