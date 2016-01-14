@@ -2,10 +2,17 @@ server:
   port: 8001
 management:
   port: 9001
+info:
+  name: "@project.artifactId@"
+  discription: "@project.description@"
+  version: "@project.version@"
+  bootstrapprop: bootstrap prop
 
 spring: 
   profiles:
-    include: native  
+    include: native 
+  application:  
+    name: config-server 
   cloud:
       config:
         server:
@@ -14,14 +21,14 @@ spring:
 ---
 spring:
   profiles: dev
-  application:  
-    name: config-server
-info:
-  name: "@project.artifactId@"
-  discription: "@project.description@"
-  version: "@project.version@"
-  bootstrapprop: bootstrap prop
 eureka: 
   client:
     service-url:
       defaultZone: http://localhost:8002/eureka/
+---
+spring:
+  profiles: test
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://localhost:192.168.17.175/eureka/

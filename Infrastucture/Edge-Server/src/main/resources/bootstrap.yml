@@ -1,9 +1,7 @@
 server:
   port: 8003
   
----  
 spring:
-  profiles: dev
   application:
     name: edge-server
   cloud:
@@ -12,9 +10,17 @@ spring:
       discovery:
         enabled: true
         serviceId: config-server
-info:
-  tlast: -1
+---  
+spring:
+  profiles: dev        
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8002/eureka/
+---  
+spring:
+  profiles: test
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.17.175:8002/eureka/

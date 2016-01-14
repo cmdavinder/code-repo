@@ -2,9 +2,7 @@ server:
   port: 8002
 management:
   port: 9002
----
 spring:
-  profiles: dev
   application:
     name: discovery-server
   cloud:
@@ -13,12 +11,24 @@ spring:
         enabled: false
 info:
     version: "@project.version@" 
+---
+spring:
+  profiles: dev 
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:8002/eureka/
+---
+spring:
+  profiles: test 
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://192.168.17.175:8002/eureka/
 
 #spring.cloud.config.label=config-dev
   

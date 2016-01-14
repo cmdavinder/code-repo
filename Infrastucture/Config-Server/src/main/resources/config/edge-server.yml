@@ -1,6 +1,11 @@
+management:
+  port: 9003
 info:
   nameV: "kjdfjsfdjaksdj"
   tthird: 3
+  name: "sdfsf@project.artifactId@"
+  discription: "@project.description@"
+  tfirst: 4
 
 zuul:
   ignoredServices: "*"
@@ -8,12 +13,5 @@ zuul:
     course1:
       path: /course/**
       service-id: COURSE-COMPOSITE-SERVICE
----
-spring:
-  profiles: dev
-management:
-  port: 9003
-info:
-  name: "sdfsf@project.artifactId@"
-  discription: "@project.description@"
-  tfirst: 4
+
+
