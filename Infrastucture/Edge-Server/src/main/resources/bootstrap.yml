@@ -4,15 +4,16 @@ server:
 spring:
   application:
     name: edge-server
+
+---  
+spring:
+  profiles: dev 
   cloud:
     config:
       fail-fast: true
       discovery:
         enabled: true
-        serviceId: config-server
----  
-spring:
-  profiles: dev        
+        serviceId: config-server       
 eureka:
   client:
     serviceUrl:
@@ -20,6 +21,12 @@ eureka:
 ---  
 spring:
   profiles: test
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-server
 eureka:
   client:
     serviceUrl:
