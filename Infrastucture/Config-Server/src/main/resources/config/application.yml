@@ -1,6 +1,5 @@
 info:
   tfourth: 1
-info:
   application: application dev
   component: ${eureka.instance.metadataMap.instanceId}
   tsecond: 2
