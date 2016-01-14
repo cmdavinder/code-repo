@@ -1,0 +1,17 @@
+server:
+  port: 8005
+
+turbine:
+  stream:
+    port: 8006
+
+spring:
+  application:
+    name: wiziq-turbine
+---
+spring:
+  profiles: dev   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8002/eureka/

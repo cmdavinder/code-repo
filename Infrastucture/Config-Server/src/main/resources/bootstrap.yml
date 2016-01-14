@@ -1,0 +1,27 @@
+server:
+  port: 8001
+management:
+  port: 9001
+
+spring: 
+  profiles:
+    include: native  
+  cloud:
+      config:
+        server:
+          native:
+            search-locations: classpath:config/
+---
+spring:
+  profiles: dev
+  application:  
+    name: config-server
+info:
+  name: "@project.artifactId@"
+  discription: "@project.description@"
+  version: "@project.version@"
+  bootstrapprop: bootstrap prop
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/
