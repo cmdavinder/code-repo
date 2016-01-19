@@ -11,9 +11,9 @@ spring:
   profiles: dev
   cloud:
     config:
-      fail-fast: true
+      fail-fast: false
       discovery:
-        enabled: true
+        enabled: false
         serviceId: config-server
 eureka:
   client:
