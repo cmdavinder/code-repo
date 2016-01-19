@@ -3,6 +3,7 @@ package com.wiziq.compositeservice.coursecompositeservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
@@ -13,16 +14,21 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 @EnableDiscoveryClient
 public class CourseCompositeServiceApplication {
 
-	
-	public static void main(String[] args) {
-		SpringApplication.run(CourseCompositeServiceApplication.class, args);
-	}
-	
-	@Bean(name="messageSource")
-	public ReloadableResourceBundleMessageSource messageSource(){		
+	@Bean(name = "messageSource")
+	public ReloadableResourceBundleMessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageBundle = new ReloadableResourceBundleMessageSource();
 		messageBundle.setBasename("classpath:messages/messages");
 		messageBundle.setDefaultEncoding("UTF-8");
-	    return messageBundle;
+		return messageBundle;
 	}
+
+	@Bean
+	public AlwaysSampler defaultSampler() {
+		return new AlwaysSampler();
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(CourseCompositeServiceApplication.class, args);
+	}
+
 }

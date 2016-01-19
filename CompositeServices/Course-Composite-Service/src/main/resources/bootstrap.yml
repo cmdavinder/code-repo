@@ -1,9 +1,14 @@
 server:
   port: 8990
 
+
 spring:
   application:
     name: course-composite-service
+  sleuth:
+    log:
+      json:
+        enabled: true
 info:
   component:  ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
 ---
@@ -17,8 +22,15 @@ spring:
         serviceId: config-server
 eureka:
   client:
+    #register-with-eureka: false
     serviceUrl:
       defaultZone: http://localhost:8002/eureka/
+      
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
+
+ 
 ---
 spring:
   profiles: test
