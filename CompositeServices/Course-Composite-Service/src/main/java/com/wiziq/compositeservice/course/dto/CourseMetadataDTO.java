@@ -7,12 +7,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CourseMetadataDTO {
-	
-	  @NotNull(message = "error.title.notnull")
-	  @Size(min = 1, max = 30, message = "error.title.size")
-	  private String title;
-	  
-	  @Size(max = 100, message = "error.description.size")
-	  private String description;
-	  
+
+	@NotNull(message = "error.title.notnull")
+	@Size(min = 1, max = 30, message = "error.title.size")
+	private String title;
+
+	@Size(max = 100, message = "error.description.size")
+	private String Description;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }

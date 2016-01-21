@@ -1,0 +1,51 @@
+server:
+  port: 8991
+
+
+spring:
+  application:
+    name: course-micro-service
+  sleuth:
+    log:
+      json:
+        enabled: true
+info:
+  component:  ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-server
+  data:
+    mongodb:
+      uri: mongodb://192.168.17.175:27019/course
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8002/eureka/
+      
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-server
+  data:
+    mongodb:
+      host: 192.168.17.175
+      database: course
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.17.175:8002/eureka/
