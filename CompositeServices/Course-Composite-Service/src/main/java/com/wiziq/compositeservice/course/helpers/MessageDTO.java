@@ -1,4 +1,4 @@
-package com.wiziq.compositeservice.coursecompositeservice.configuration;
+package com.wiziq.compositeservice.course.helpers;
 
 public class MessageDTO {
   private String message;

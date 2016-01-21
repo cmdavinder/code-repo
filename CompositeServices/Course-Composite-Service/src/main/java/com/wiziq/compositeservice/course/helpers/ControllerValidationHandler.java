@@ -1,4 +1,4 @@
-package com.wiziq.compositeservice.coursecompositeservice.configuration;
+package com.wiziq.compositeservice.course.helpers;
 
 import java.util.Locale;
 
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class ControllerValidationHandler {
+	
 	@Autowired
 	private MessageSource msgSource;
 

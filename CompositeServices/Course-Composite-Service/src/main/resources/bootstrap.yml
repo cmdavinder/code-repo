@@ -11,26 +11,31 @@ spring:
         enabled: true
 info:
   component:  ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+  
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
+
+wiziq:
+  microservice:
+    course:
+      serviceId: course-micro-service
+    
+
 ---
 spring:
   profiles: dev
   cloud:
     config:
-      fail-fast: false
+      fail-fast: true
       discovery:
-        enabled: false
+        enabled: true
         serviceId: config-server
 eureka:
   client:
-    #register-with-eureka: false
     serviceUrl:
       defaultZone: http://localhost:8002/eureka/
       
-logging:
-  pattern:
-    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
-
- 
 ---
 spring:
   profiles: test

@@ -1,4 +1,4 @@
-package com.wiziq.compositeservice.coursecompositeservice.dto;
+package com.wiziq.compositeservice.course.dto;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,6 +15,4 @@ public class CourseMetadataDTO {
 	  @Size(max = 100, message = "error.description.size")
 	  private String description;
 	  
-	  
-	
 }
