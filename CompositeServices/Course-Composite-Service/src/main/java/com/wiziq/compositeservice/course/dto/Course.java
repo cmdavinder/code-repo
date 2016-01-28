@@ -1,25 +1,21 @@
-	package com.wiziq.microservice.course.model;
+	package com.wiziq.compositeservice.course.dto;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Date;
 
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.wiziq.microservice.course.enums.CourseType;
+import com.wiziq.compositeservice.course.helpers.CourseType;
 
 /**
  * Created by dinkarthakur on 25/01/16.
  */
-@Document
 public class Course {
 
-	@Id
 	private String id;
-
+	
 	private String title;
 
 	private String description;

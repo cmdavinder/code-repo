@@ -1,7 +1,5 @@
 package com.wiziq.microservice.course.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,15 +9,21 @@ import com.wiziq.microservice.course.repository.CourseRepository;
 @Service
 public class CourseService {
 
+	
 	@Autowired
 	private CourseRepository courseRepo;
 	
-	public List <Course> getCourseByTitle(String title){
-		return courseRepo.findByTitle(title);
+	public Course getCourseById(String id){
+		return courseRepo.findOne(id);
 	}
 	
-	public Course createCourseMetadata(Course courseMetaData){
-		return courseRepo.save(courseMetaData);
+	public Course createCourse(Course course){
+		return courseRepo.save(course);
 	}
+	
+	public Course updateCourse(Course courseData){
+		return null;//return courseRepo.findByTitle(courseData.getTitle());
+	}
+
 	
 }
