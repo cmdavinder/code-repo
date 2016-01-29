@@ -1,49 +1,32 @@
-	package com.wiziq.compositeservice.course.dto;
+package com.wiziq.compositeservice.course.dto;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Date;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.wiziq.compositeservice.course.helpers.CourseType;
 
 /**
  * Created by dinkarthakur on 25/01/16.
  */
-public class Course {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CourseDto {
 
 	private String id;
-	
 	private String title;
-
 	private String description;
-
 	private String preRequisites;
-
 	private String targetAudience;
-
 	private String outcome;
-
 	private String disclaimer;
-
 	private String owner;
-
 	private BigDecimal price;
-
 	private Currency currency;
-
 	private Float discount;
-
-	private int duration;
-
+	private Integer duration;
 	private CourseType courseType;
-
-	@CreatedDate
 	private Date createdDate;
-
-	@LastModifiedDate
 	private Date updatedDate;
 
 	/**
@@ -54,7 +37,8 @@ public class Course {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -68,7 +52,8 @@ public class Course {
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param title
+	 *            the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
@@ -82,7 +67,8 @@ public class Course {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -96,7 +82,8 @@ public class Course {
 	}
 
 	/**
-	 * @param preRequisites the preRequisites to set
+	 * @param preRequisites
+	 *            the preRequisites to set
 	 */
 	public void setPreRequisites(String preRequisites) {
 		this.preRequisites = preRequisites;
@@ -110,7 +97,8 @@ public class Course {
 	}
 
 	/**
-	 * @param targetAudience the targetAudience to set
+	 * @param targetAudience
+	 *            the targetAudience to set
 	 */
 	public void setTargetAudience(String targetAudience) {
 		this.targetAudience = targetAudience;
@@ -124,7 +112,8 @@ public class Course {
 	}
 
 	/**
-	 * @param outcome the outcome to set
+	 * @param outcome
+	 *            the outcome to set
 	 */
 	public void setOutcome(String outcome) {
 		this.outcome = outcome;
@@ -138,7 +127,8 @@ public class Course {
 	}
 
 	/**
-	 * @param disclaimer the disclaimer to set
+	 * @param disclaimer
+	 *            the disclaimer to set
 	 */
 	public void setDisclaimer(String disclaimer) {
 		this.disclaimer = disclaimer;
@@ -152,7 +142,8 @@ public class Course {
 	}
 
 	/**
-	 * @param owner the owner to set
+	 * @param owner
+	 *            the owner to set
 	 */
 	public void setOwner(String owner) {
 		this.owner = owner;
@@ -166,7 +157,8 @@ public class Course {
 	}
 
 	/**
-	 * @param price the price to set
+	 * @param price
+	 *            the price to set
 	 */
 	public void setPrice(BigDecimal price) {
 		this.price = price;
@@ -180,7 +172,8 @@ public class Course {
 	}
 
 	/**
-	 * @param currency the currency to set
+	 * @param currency
+	 *            the currency to set
 	 */
 	public void setCurrency(Currency currency) {
 		this.currency = currency;
@@ -194,7 +187,8 @@ public class Course {
 	}
 
 	/**
-	 * @param discount the discount to set
+	 * @param discount
+	 *            the discount to set
 	 */
 	public void setDiscount(Float discount) {
 		this.discount = discount;
@@ -203,14 +197,15 @@ public class Course {
 	/**
 	 * @return the duration
 	 */
-	public int getDuration() {
+	public Integer getDuration() {
 		return duration;
 	}
 
 	/**
-	 * @param duration the duration to set
+	 * @param duration
+	 *            the duration to set
 	 */
-	public void setDuration(int duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
 	}
 
@@ -222,7 +217,8 @@ public class Course {
 	}
 
 	/**
-	 * @param courseType the courseType to set
+	 * @param courseType
+	 *            the courseType to set
 	 */
 	public void setCourseType(CourseType courseType) {
 		this.courseType = courseType;
@@ -236,7 +232,8 @@ public class Course {
 	}
 
 	/**
-	 * @param createdDate the createdDate to set
+	 * @param createdDate
+	 *            the createdDate to set
 	 */
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
@@ -250,7 +247,8 @@ public class Course {
 	}
 
 	/**
-	 * @param updatedDate the updatedDate to set
+	 * @param updatedDate
+	 *            the updatedDate to set
 	 */
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;

@@ -6,19 +6,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.wiziq.compositeservice.course.dto.Course;
-import com.wiziq.compositeservice.course.dto.CourseAttribute;
-import com.wiziq.compositeservice.course.dto.CourseMetadata;
+import com.wiziq.compositeservice.course.dto.CourseDto;
 
 @FeignClient("${wiziq.microservice.course.serviceId}")
 public interface CourseMicroService {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	ResponseEntity<Course> getCourseById(@PathVariable(value ="id") String id);
+	ResponseEntity<CourseDto> getCourseById(@PathVariable(value = "id") String id);
 
 	@RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
-	ResponseEntity<Course> createCourse(CourseMetadata courseMetadata);
+	ResponseEntity<CourseDto> createCourse(CourseDto courseData);
 
-	@RequestMapping(value="/", method = RequestMethod.PATCH)
-	ResponseEntity<Course> updateCourse(CourseAttribute courseAttributes);
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = "application/json")
+	ResponseEntity<CourseDto> updateCourse(@PathVariable(value = "id") String id, CourseDto courseData);
+
 }

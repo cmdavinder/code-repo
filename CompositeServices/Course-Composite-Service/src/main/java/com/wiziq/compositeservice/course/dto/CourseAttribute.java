@@ -10,7 +10,7 @@ public class CourseAttribute {
 	private BigDecimal price;
 	private Currency currency;
 	private Float discount;
-	private int duration;
+	private Integer duration;
 	private CourseType courseType;
 
 	/**
@@ -58,14 +58,14 @@ public class CourseAttribute {
 	/**
 	 * @return the duration
 	 */
-	public int getDuration() {
+	public Integer getDuration() {
 		return duration;
 	}
 
 	/**
 	 * @param duration the duration to set
 	 */
-	public void setDuration(int duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
 	}
 

@@ -25,15 +25,15 @@ public class CourseController {
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ResponseEntity<Course> CourseMetadata(@RequestBody Course course) {
-		courseService.createCourse(course);
-		return new ResponseEntity<Course>(course, HttpStatus.CREATED);
+	public ResponseEntity<Course> CourseMetadata(@RequestBody Course courseDto) {
+		courseService.createCourse(courseDto);
+		return new ResponseEntity<Course>(courseDto, HttpStatus.CREATED);
 	}
-	
-	@RequestMapping(value = "/", method = RequestMethod.PATCH)
-	public ResponseEntity<Course> updateCourse(@RequestBody Course course) {
-		courseService.updateCourse(course);
-		return new ResponseEntity<Course>(course, HttpStatus.NO_CONTENT);
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Course> updateCourse(@PathVariable(value = "id") String id, @RequestBody Course courseDto) {
+		Course c = courseService.updateCourse(id,courseDto);
+		return new ResponseEntity<Course>(c, HttpStatus.OK);
 	}
 
 }
