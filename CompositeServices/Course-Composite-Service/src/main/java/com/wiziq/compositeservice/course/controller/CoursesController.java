@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wiziq.compositeservice.course.dto.CourseAttribute;
 import com.wiziq.compositeservice.course.dto.CourseDto;
-import com.wiziq.compositeservice.course.dto.CourseMetadata;
-import com.wiziq.compositeservice.course.service.CourseOrchestrationService;
+import com.wiziq.compositeservice.course.service.CourseMicroServiceImpl;
+import com.wiziq.compositeservice.course.viewmodel.CourseAttribute;
+import com.wiziq.compositeservice.course.viewmodel.CourseMetadata;
 
 /**
  * Created by dinkarthakur on 30/12/15.
@@ -22,7 +22,7 @@ import com.wiziq.compositeservice.course.service.CourseOrchestrationService;
 public class CoursesController {
 
 	@Autowired
-	private CourseOrchestrationService courseOrchestrationService;
+	private CourseMicroServiceImpl courseOrchestrationService;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<CourseDto> getCourse(@PathVariable(value = "id") String id) {

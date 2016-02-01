@@ -1,4 +1,4 @@
-package com.wiziq.validator;
+package com.wiziq.compositeservice.course.helpers;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

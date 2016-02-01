@@ -1,9 +1,10 @@
-package com.wiziq.compositeservice.course.dto;
+package com.wiziq.compositeservice.course.viewmodel;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 
-import com.wiziq.compositeservice.course.helpers.CourseType;
+import com.wiziq.compositeservice.course.enums.CourseAccessibilty;
+import com.wiziq.compositeservice.course.helpers.EnumValidator;
 
 public class CourseAttribute {
 	
@@ -11,7 +12,8 @@ public class CourseAttribute {
 	private Currency currency;
 	private Float discount;
 	private Integer duration;
-	private CourseType courseType;
+	@EnumValidator(enumClazz=CourseAccessibilty.class,message="Please Enter valid value")
+	private CourseAccessibilty courseType;
 
 	/**
 	 * @return the price
@@ -72,14 +74,14 @@ public class CourseAttribute {
 	/**
 	 * @return the courseType
 	 */
-	public CourseType getCourseType() {
+	public CourseAccessibilty getCourseType() {
 		return courseType;
 	}
 
 	/**
 	 * @param courseType the courseType to set
 	 */
-	public void setCourseType(CourseType courseType) {
+	public void setCourseType(CourseAccessibilty courseType) {
 		this.courseType = courseType;
 	}
 	

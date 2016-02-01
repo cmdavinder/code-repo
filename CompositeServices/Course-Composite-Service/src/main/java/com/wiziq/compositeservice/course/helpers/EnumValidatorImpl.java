@@ -1,4 +1,4 @@
-package com.wiziq.validator;
+package com.wiziq.compositeservice.course.helpers;
 
 import java.util.ArrayList;
 import java.util.List;

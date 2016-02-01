@@ -1,4 +1,4 @@
-package com.wiziq.compositeservice.course.dto;
+package com.wiziq.compositeservice.course.viewmodel;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;

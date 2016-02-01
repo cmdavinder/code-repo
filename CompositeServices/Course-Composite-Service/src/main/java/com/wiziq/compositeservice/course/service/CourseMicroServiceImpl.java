@@ -7,13 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.wiziq.compositeservice.course.dto.CourseAttribute;
 import com.wiziq.compositeservice.course.dto.CourseDto;
-import com.wiziq.compositeservice.course.dto.CourseMetadata;
 import com.wiziq.compositeservice.course.service.contracts.CourseMicroService;
+import com.wiziq.compositeservice.course.viewmodel.CourseAttribute;
+import com.wiziq.compositeservice.course.viewmodel.CourseMetadata;
 
 @Component
-public class CourseOrchestrationService {
+public class CourseMicroServiceImpl {
 
 	@Autowired
 	private CourseMicroService courseMicroService;

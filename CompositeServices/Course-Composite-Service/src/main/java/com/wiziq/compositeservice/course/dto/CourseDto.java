@@ -5,7 +5,7 @@ import java.util.Currency;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.wiziq.compositeservice.course.helpers.CourseType;
+import com.wiziq.compositeservice.course.enums.CourseAccessibilty;
 
 /**
  * Created by dinkarthakur on 25/01/16.
@@ -25,7 +25,7 @@ public class CourseDto {
 	private Currency currency;
 	private Float discount;
 	private Integer duration;
-	private CourseType courseType;
+	private CourseAccessibilty courseType;
 	private Date createdDate;
 	private Date updatedDate;
 
@@ -212,7 +212,7 @@ public class CourseDto {
 	/**
 	 * @return the courseType
 	 */
-	public CourseType getCourseType() {
+	public CourseAccessibilty getCourseType() {
 		return courseType;
 	}
 
@@ -220,7 +220,7 @@ public class CourseDto {
 	 * @param courseType
 	 *            the courseType to set
 	 */
-	public void setCourseType(CourseType courseType) {
+	public void setCourseType(CourseAccessibilty courseType) {
 		this.courseType = courseType;
 	}
 

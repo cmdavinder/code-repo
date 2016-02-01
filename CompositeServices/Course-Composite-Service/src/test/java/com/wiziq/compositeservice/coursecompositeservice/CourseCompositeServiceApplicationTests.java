@@ -5,10 +5,10 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.wiziq.compositeservice.course.CourseCreateApplication;
+import com.wiziq.compositeservice.course.CourseApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = CourseCreateApplication.class)
+@SpringApplicationConfiguration(classes = CourseApplication.class)
 public class CourseCompositeServiceApplicationTests {
 
 	@Test
