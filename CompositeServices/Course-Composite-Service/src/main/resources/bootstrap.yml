@@ -1,7 +1,6 @@
 server:
   port: 8990
 
-
 spring:
   application:
     name: course-composite-service
@@ -9,6 +8,9 @@ spring:
     log:
       json:
         enabled: true
+  data:
+    rest:
+      base-path: /api
 info:
   component:  ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
   
@@ -16,39 +18,39 @@ logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
 
-wiziq:
-  microservice:
-    course:
-      serviceId: course-micro-service
-    
-
 ---
 spring:
   profiles: dev
-  cloud:
-    config:
-      fail-fast: true
-      discovery:
-        enabled: true
-        serviceId: config-server
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8002/eureka/
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/course
+#  cloud:
+#    config:
+#      fail-fast: false
+#      discovery:
+#        enabled: false
+#        serviceId: config-server
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8002/eureka/
+     
       
 ---
 spring:
   profiles: test
-  cloud:
-    config:
-      fail-fast: true
-      discovery:
-        enabled: true
-        serviceId: config-server
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.17.175:8002/eureka/
+  data:
+    mongodb:
+      uri: mongodb://192.168.17.175:27017/course
+#  cloud:
+#   config:
+#      fail-fast: true
+#      discovery:
+#        enabled: true
+#        serviceId: config-server
 
-      
-#spring.cloud.config.label=config-dev
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://192.168.17.175:8002/eureka/

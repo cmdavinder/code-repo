@@ -1,9 +1,0 @@
-management:
-  port: 9081
-
-info:
-  name: "@project.artifactId@"
-  discription: "@project.description@"
-
-logging:
-  file: /var/log/wiziq/composite-service/course.log

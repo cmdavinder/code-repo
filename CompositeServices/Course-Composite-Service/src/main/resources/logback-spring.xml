@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <jmxConfigurator/>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<jmxConfigurator />
+	<logger name="org.springframework.data.mongodb">
+		<level value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
 </configuration>
